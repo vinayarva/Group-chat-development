@@ -1,0 +1,20 @@
+{
+  "name": "group-chat-development",
+  "version": "1.0.0",
+  "description": "chat",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "run": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "env": "^0.0.2",
+    "express": "^4.21.1",
+    "sequelize": "^6.37.5"
+  }
+}
