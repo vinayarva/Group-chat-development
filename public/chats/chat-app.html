@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container-fluid vh-100 d-flex flex-column">
+        <header class="bg-primary text-white d-flex justify-content-between align-items-center p-3">
+            <h1 class="h4 m-0">Group Chat App</h1>
+            <a id="logout" href="../login/login.html" class="btn btn-danger btn-sm">Logout</a>
+        </header>
+
+        <div class="row flex-grow-1 overflow-hidden">
+            <!-- Groups Sidebar -->
+            <aside class="col-3 bg-white border-end p-3 overflow-auto">
+                <div class="d-grid gap-2 mb-4">
+                    <button id="createGroupBtn" class="btn btn-success btn-sm">Create Group</button>
+                    <button id="deleteGroupBtn" class="btn btn-danger btn-sm">Delete Group</button>
+                </div>
+                <div id="groupList">
+                    <h2 class="h6 text-secondary">Groups</h2>
+                    <ul id="groups-list" class="list-group list-group-flush text-capitalize"></ul>
+                </div>
+            </aside>
+
+            <!-- Main Chat Content -->
+            <div class="col-6 d-flex flex-column">
+                <div class="bg-light border-bottom p-3">
+                    <h2 id="group-name" class="h5 text-primary text-capitalize"></h2>
+                    <h2 id="admin" class="h6 text-secondary text-capitalize"></h2>
+                </div>
+                <main class="flex-grow-1 p-3 overflow-auto" id="chat-box" style="background-color: #f8f9fa;height: 65vh;">
+                    <!-- Messages will be appended here -->
+                </main>
+                <section class="p-3 border-top">
+                    <form id="chats-form" class="d-flex gap-2">
+                        <input type="text" id="chats-input" class="form-control" placeholder="Type a message..." required>
+                        <button id="sendBtn" type="submit" class="btn btn-primary">Send</button>
+                        <input type="file" id="myFile" name="myFile" accept=".png, .jpg, .jpeg, .gif, .pdf" class="form-control w-auto">
+                        <button type="submit" id="uploadFile" class="btn btn-secondary">Upload</button>
+                    </form>
+                </section>
+            </div>
+
+            <!-- Users Sidebar -->
+            <aside class="col-3 bg-white border-start p-3 overflow-auto">
+                <section id="users-list" class="mb-4">
+                    <h2 class="h6 text-secondary">Users</h2>
+                    <!-- Users will be appended here -->
+                </section>
+                <section id="group-members">
+                    <h2 class="h6 text-secondary">Group Members</h2>
+                    <ul id="group-members-list" class="list-group list-group-flush" style="list-style: none;" ></ul>
+                </section>
+            </aside>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./chat-app.js"></script>
+</body>
+</html>

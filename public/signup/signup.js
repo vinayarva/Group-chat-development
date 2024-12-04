@@ -1,19 +1,18 @@
-function signupForm(event){
+async function signupPage (event) {
     event.preventDefault();
-    const details = {
-        username : event.target.username.value,
-        email: event.target.email.value,
-        phoneNumber : event.target.phone.value,
-        password : event.target.password.value
+    const signupDetails = {
+        username:event.target.username.value,
+        email:event.target.email.value,
+        number:event.target.number.value,
+        password:event.target.password.value,
+    }; 
+    console.log(signupDetails)
+    try{
+        const response = await axios.post('http://localhost:3000/user/signup', signupDetails);
+        alert('Succesfully signed');
+        window.location.href = '../login/login.html';
+    }catch(error){
+        console.error('Error signing up:', error);
+        alert('Signup failed. Please check your details and try again.');
     }
-    console.log(details);
-    
-    axios.post("http://localhost:4000/signup", details).then((result) => {
-       alert(result.data.message); 
-    }).catch((err) => {
-        alert(err.response.data.message)
-    });
-
-
-    document.getElementById("myForm").reset();
 }

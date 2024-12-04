@@ -1,20 +1,36 @@
 {
-  "name": "group-chat-development",
+  "name": "superpowers-of-the-admin",
   "version": "1.0.0",
-  "description": "chat",
+  "description": "A group chat application with admin superpowers",
   "main": "app.js",
-  "scripts": {
-    "start": "nodemon app.js",
-    "run": "node app.js"
+  "engines": {
+    "node": "14.x"
   },
-  "author": "",
-  "license": "ISC",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
+    "aws-sdk": "^2.1642.0",
     "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
+    "cron": "^3.1.7",
     "dotenv": "^16.4.5",
-    "env": "^0.0.2",
-    "express": "^4.21.1",
-    "sequelize": "^6.37.5"
-  }
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.10.0",
+    "path": "^0.12.7",
+    "sequelize": "^6.37.3",
+    "socket.io": "^4.7.5",
+    "vercel": "^35.1.0",
+    "ws": "^8.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "keywords": [],
+  "author": "najiya",
+  "license": "ISC"
 }
